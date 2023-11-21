@@ -7,15 +7,18 @@
 
 import Foundation
 import SWXMLHash
+import UIKit
 class RSSViewModel:NSObject,ObservableObject{
     func showRSS(rssString:String) async -> [RSSModel]{
         return await withCheckedContinuation { checked in
             DispatchQueue.main.async{
                     let urlMain = URL(string:rssString)
-                    let request = URLRequest(url: urlMain!)
+                    guard let urlNew = urlMain else { return }
+                    let request = URLRequest(url: urlNew)
                     URLSession.shared.dataTask(with: request) { data, response, error in
                         do{
-                            let parseXML = String(data: data!, encoding: .utf8)
+                            guard let dataNew = data else { return }
+                            let parseXML = String(data: dataNew, encoding: .utf8)
                             let xml = XMLHash.parse(parseXML!)
                             var rssArray:[RSSModel] = []
                             for item in try xml.byKey("rss").byKey("channel").byKey("item").all{
@@ -23,7 +26,7 @@ class RSSViewModel:NSObject,ObservableObject{
                             }
                             checked.resume(returning: rssArray)
                         }catch{
-                            debugPrint("something went wrong!!!!")
+                            debugPrint("Something went wrong!!!!!")
                         }
                         
                     }.resume()
