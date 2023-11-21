@@ -11,19 +11,6 @@ import Foundation
 import SwiftUI
 import SafetyKit
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      return loadValuesInCell(indexPath: indexPath)
-    }
-    @objc func openArticle(button:UIButton){
-        UIApplication.shared.openURL(URL(string: list[button.tag].link)!)
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 310.0
-    }
     var viewModel = RSSViewModel()
     var list:[RSSModel] = []{
         didSet{
@@ -32,14 +19,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     @IBOutlet weak var txtFeedURL: UITextField!
     @IBAction func btnShowList(_ sender: Any) {
-        Task{
-            if list.count > 0 {
-                list.removeAll()
-                list.append(contentsOf:await viewModel.showRSS(rssString:txtFeedURL.text!))
-            }else{
-                list.append(contentsOf:await viewModel.showRSS(rssString:txtFeedURL.text!))
-            }
-        }
+        fillArrayWithValues()
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -53,6 +33,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 }
 
 extension ViewController{
+    func fillArrayWithValues(){
+        Task{
+            if list.count > 0 {
+                list.removeAll()
+                list.append(contentsOf:await viewModel.showRSS(rssString:txtFeedURL.text!))
+            }else{
+                list.append(contentsOf:await viewModel.showRSS(rssString:txtFeedURL.text!))
+            }
+        }
+    }
     func initialViewController(){
         self.navigationItem.title = "SwiftRSS Demo"
         tableView.register(UINib(nibName: "RSSCell", bundle:nil), forCellReuseIdentifier: "cell")
@@ -70,5 +60,18 @@ extension ViewController{
             cell.CmdLink.addTarget(self, action: #selector(openArticle(button:)), for: .touchDown)
         }
         return cell
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      return loadValuesInCell(indexPath: indexPath)
+    }
+    @objc func openArticle(button:UIButton){
+        UIApplication.shared.openURL(URL(string: list[button.tag].link)!)
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 310.0
     }
 }
