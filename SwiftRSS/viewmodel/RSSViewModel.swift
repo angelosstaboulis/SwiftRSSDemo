@@ -12,8 +12,8 @@ class RSSViewModel:NSObject,ObservableObject{
     func showRSS(rssString:String) async -> [RSSModel]{
         return await withCheckedContinuation { checked in
             DispatchQueue.main.async{
-                    let urlMain = URL(string:rssString)
-                    guard let urlNew = urlMain else { return }
+                    let urlMain = URL(string: rssString)
+                    guard let urlNew = urlMain else {return }
                     let request = URLRequest(url: urlNew)
                     URLSession.shared.dataTask(with: request) { data, response, error in
                         do{
