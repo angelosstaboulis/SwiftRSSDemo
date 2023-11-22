@@ -17,6 +17,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             tableView.reloadData()
         }
     }
+    @IBOutlet weak var btnShowList: UIButton!
     @IBOutlet weak var txtFeedURL: UITextField!
     @IBAction func btnShowList(_ sender: Any) {
         fillArrayWithValues()
@@ -44,6 +45,10 @@ extension ViewController{
         }
     }
     func initialViewController(){
+        btnShowList.layer.cornerRadius = 15
+        btnShowList.backgroundColor = UIColor.systemBlue
+        btnShowList.setTitle("ShowList", for: .normal)
+        btnShowList.setTitleColor(UIColor.white, for: .normal)
         self.navigationItem.title = "SwiftRSS Demo"
         tableView.register(UINib(nibName: "RSSCell", bundle:nil), forCellReuseIdentifier: "cell")
         tableView.delegate = self
@@ -72,6 +77,6 @@ extension ViewController{
         UIApplication.shared.openURL(URL(string: list[button.tag].link)!)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 310.0
+        return 250.0
     }
 }

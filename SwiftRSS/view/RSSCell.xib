@@ -10,76 +10,77 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="163" id="KGk-i7-Jjw" customClass="RSSCell" customModule="SwiftRSS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="470" height="163"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="236" id="KGk-i7-Jjw" customClass="RSSCell" customModule="SwiftRSS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="487" height="236"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="470" height="163"/>
+                <rect key="frame" x="0.0" y="0.0" width="487" height="236"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlT-gD-PaG">
-                        <rect key="frame" x="-8" y="60" width="549" height="169"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlT-gD-PaG">
+                        <rect key="frame" x="-8" y="40" width="549" height="169"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfR-z5-xck">
                                 <rect key="frame" x="25" y="10" width="330" height="86"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="330" id="gyb-t1-Qw5"/>
+                                    <constraint firstAttribute="width" constant="330" id="8fI-aa-t34"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PubDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMR-tu-ufe">
-                                <rect key="frame" x="8" y="96" width="223" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PubDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMR-tu-ufe">
+                                <rect key="frame" x="30" y="96" width="223" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="223" id="13b-Iy-Tvw"/>
+                                    <constraint firstAttribute="width" constant="223" id="bdg-hm-Z6U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmV-EW-MXo">
-                                <rect key="frame" x="203" y="89" width="389" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="389" id="ycf-Ov-M9D"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
-                            <constraint firstItem="gMR-tu-ufe" firstAttribute="top" secondItem="KfR-z5-xck" secondAttribute="bottom" id="IZi-Nt-Hrx"/>
-                            <constraint firstItem="KfR-z5-xck" firstAttribute="top" secondItem="nlT-gD-PaG" secondAttribute="top" constant="10" id="MLH-mZ-HRW"/>
-                            <constraint firstAttribute="bottom" secondItem="XmV-EW-MXo" secondAttribute="bottom" constant="45" id="N0Q-ja-cxC"/>
-                            <constraint firstItem="gMR-tu-ufe" firstAttribute="centerY" secondItem="XmV-EW-MXo" secondAttribute="centerY" id="Y8T-yp-njh"/>
-                            <constraint firstItem="KfR-z5-xck" firstAttribute="leading" secondItem="gMR-tu-ufe" secondAttribute="leading" constant="17" id="oR0-Ti-wdh"/>
-                            <constraint firstItem="XmV-EW-MXo" firstAttribute="top" secondItem="nlT-gD-PaG" secondAttribute="top" constant="89" id="sVY-eF-LaF"/>
-                            <constraint firstItem="KfR-z5-xck" firstAttribute="leading" secondItem="nlT-gD-PaG" secondAttribute="leadingMargin" constant="17" id="tju-rg-DB7"/>
-                            <constraint firstAttribute="trailing" secondItem="XmV-EW-MXo" secondAttribute="trailing" constant="-43" id="tuk-e2-dzw"/>
-                            <constraint firstAttribute="bottom" secondItem="gMR-tu-ufe" secondAttribute="bottom" constant="52" id="yKi-bi-fOn"/>
+                            <constraint firstAttribute="height" constant="169" id="6aW-4T-wGy"/>
+                            <constraint firstItem="gMR-tu-ufe" firstAttribute="leading" secondItem="nlT-gD-PaG" secondAttribute="leading" constant="30" id="9ZT-FL-dgZ"/>
+                            <constraint firstItem="KfR-z5-xck" firstAttribute="top" secondItem="nlT-gD-PaG" secondAttribute="top" constant="10" id="IzJ-iS-grZ"/>
+                            <constraint firstAttribute="bottom" secondItem="KfR-z5-xck" secondAttribute="bottom" constant="73" id="eay-Oe-22J"/>
+                            <constraint firstItem="KfR-z5-xck" firstAttribute="leading" secondItem="nlT-gD-PaG" secondAttribute="leading" constant="25" id="fBJ-2b-dnO"/>
+                            <constraint firstItem="gMR-tu-ufe" firstAttribute="centerY" secondItem="nlT-gD-PaG" secondAttribute="centerY" constant="22" id="i0u-BH-Hw4"/>
+                            <constraint firstAttribute="width" constant="549" id="vZM-Tt-hgP"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmV-EW-MXo">
+                        <rect key="frame" x="12" y="182" width="165" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="165" id="d8q-HV-4gI"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Ανάγνωση Αρθρου" titleAlignment="automatic"/>
+                    </button>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemTealColor"/>
                 <constraints>
-                    <constraint firstItem="nlT-gD-PaG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-28" id="Y0z-1P-RMo"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="nlT-gD-PaG" secondAttribute="bottom" constant="-111" id="e3k-Nv-GNP"/>
-                    <constraint firstItem="nlT-gD-PaG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-10" id="jnH-kh-aXa"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="nlT-gD-PaG" secondAttribute="trailing" constant="-91" id="oan-xz-JCR"/>
+                    <constraint firstItem="XmV-EW-MXo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="182" id="748-eC-gnT"/>
+                    <constraint firstItem="XmV-EW-MXo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="jve-PN-A4v"/>
+                    <constraint firstItem="XmV-EW-MXo" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="26" id="mt8-Fw-VxW"/>
+                    <constraint firstItem="nlT-gD-PaG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="-8" id="rme-84-hAw"/>
+                    <constraint firstItem="nlT-gD-PaG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="tTY-ge-3Bw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" systemColor="systemTealColor"/>
             <connections>
                 <outlet property="CmdLink" destination="XmV-EW-MXo" id="HBE-kf-hjm"/>
                 <outlet property="lblPubDate" destination="gMR-tu-ufe" id="noB-WN-7Av"/>
                 <outlet property="lblTitle" destination="KfR-z5-xck" id="tNG-kE-74M"/>
             </connections>
-            <point key="canvasLocation" x="244.27480916030532" y="29.225352112676056"/>
+            <point key="canvasLocation" x="257.25190839694653" y="54.929577464788736"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
